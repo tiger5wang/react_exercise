@@ -28,15 +28,15 @@ export default App;*/
 
 import React, { Component } from 'react';
 import ExerciseHome from './ExerciseHome'
-
-// 函数式组件，如果一个组件只根据 props 来渲染页面，没有内部的 state 状态，则最好的方法就是使用函数组件的形式实现，并且工作中应尽可能还函数形式封装小功能的组件，这样可以高复用组件，避免重复 render 等
+// 原则： 容器组件负责获取数据，逻辑处理； 展示组件负责根据props 显示信息。
+// 函数式组件(展示组件)，如果一个组件只根据 props 来渲染页面，没有内部的 state 状态，则最好的方法就是使用函数组件的形式实现，并且工作中应尽可能还函数形式封装小功能的组件，这样可以高复用组件，避免重复 render， 提高性能 等
 function Welcome(props) {
   return(
     <div>{props.name}, 欢迎来到React</div>
   )
 }
 
-
+// 容器组件
 export default class App extends Component {
   render() {
     return (
