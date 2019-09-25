@@ -5,6 +5,7 @@ import { Button } from 'antd'
 // import PureComponent from "./modularization/PureComponent";
 import Hoc from "./modularization/Hoc";
 import Compositions from "./modularization/Compositions";
+import HookText from "./modularization/HookText";
 
 export default class ExerciseHome extends Component {
 
@@ -20,7 +21,10 @@ export default class ExerciseHome extends Component {
                 {/*<Hoc/>*/}
 
                 {/*复合组件*/}
-                <Compositions/>
+                {/*<Compositions/>*/}
+
+                {/*Hook api使用*/}
+                <HookText/>
             </div>
         )
     }
