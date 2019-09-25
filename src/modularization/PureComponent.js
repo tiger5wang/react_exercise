@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class PureComponent extends Component {
+export default class PureComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -27,23 +27,21 @@ class PureComponent extends Component {
         return(
             <div>
                 {comments.map((item, index) => (
-                    <Comment key={index} data={item}/>
+                    <Comment key={index} {...item}/>
                 ))
-
                 }
             </div>
         )
     }
 
-
 }
 
-export default PureComponent;
 
 
 
-class Comment extends Component {
-    // 需要注意的是 只要父组件重新 render了，重新传入了props， 不管props有没有改变，都会重新 render
+
+/*class Comment extends Component {
+    // 需要注意的是 只要父组件重新 render了，重新传入了props， 不管props跟之前的想比有没有改变，都会重新 render
     // 所以这里需要优化性能
 
     // 性能优化 一：
@@ -62,4 +60,35 @@ class Comment extends Component {
             </div>
         )
     }
-}
+}*/
+
+// 性能优化二：
+// 使用 React.PureComponent ,注意这个进行的是浅比较，props只有是值类型或者只有一层的引用类型时才可以，如果引用类型内还嵌套了引用类型，则会判断为ture（因为他们的地址不相同），还会继续 render
+/*class Comment extends React.PureComponent {
+    // 需要注意的是 只要父组件重新 render了，重新传入了props， 不管props跟之前的想比有没有改变，都会重新 render
+    // 所以这里需要优化性能
+
+    render() {
+        console.log('comment')
+        return(
+            <div>
+                <p>信息：{this.props.body}</p>
+                <p>留言人： ----{this.props.author}</p>
+            </div>
+        )
+    }
+}*/
+
+
+// 性能优化三：
+// 使用React.memo 高阶组件封装, 注意此处也是进行的浅比较
+const Comment = React.memo((props) => {
+    console.log('comment');
+    return(
+        <div>
+            <p>信息：{props.body}</p>
+            <p>留言人： ----{props.author}</p>
+        </div>
+    )
+})
+
