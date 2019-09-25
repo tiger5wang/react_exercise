@@ -1,3 +1,6 @@
+/*
+* 高阶组件
+* */
 import React, {Component} from 'react';
 
 // 自定义高阶组件一，返回函数形式
