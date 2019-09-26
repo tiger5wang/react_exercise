@@ -25,10 +25,10 @@ export default class ExerciseHome extends Component {
                 {/*<Compositions/>*/}
 
                 {/*Hook api使用*/}
-                {/*<HookText/>*/}
+                <HookText/>
 
                 {/*组件跨层级通信 context*/}
-                <Context/>
+                {/*<Context/>*/}
             </div>
         )
     }

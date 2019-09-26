@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
+// 自定义 钩子 - Custom-Hook
+// 自定义 hook 是一个函数，名称以“use” 开头， 内部可以使用其他 hook
+const useProIntro = (param) => {
+    const [obj, setObj] = useState({});
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('自定义钩子 - 调用api')
+            setObj({intro: '课程简介'})
+        }, 2000);
+    }, []);
+    return obj
+};
+
 
 export default function HookText() {
 
@@ -8,7 +21,11 @@ export default function HookText() {
     const [projects, setProjects] = useState(['react', 'vue', 'angular']);
     const [name, setName] = useState('选择课程');
     const [count, setCount] = useState(0);
-    const [inputValue, setInputValue] = useState('')
+    const [inputValue, setInputValue] = useState('');
+
+    // 使用自定义钩子
+    const proIntro = useProIntro('react');
+    console.log('proIntro', proIntro)
 
     // 副作用钩子 useEffect,每次渲染时都执行，
     // 可以看做 componentDidMount，componentDidUpdate 和 componentWillUnmount 这三个函数的组合。
@@ -39,6 +56,9 @@ export default function HookText() {
                 <button onClick={() => {setProjects([...projects, inputValue]);setInputValue('')}}>添加课程</button>
             </p>
 
+            <h3>以下展示自定义钩子函数返回信息</h3>
+            <p>react</p>
+            <p>{proIntro.intro ? proIntro.intro: 'loading'}</p>
 
         </div>
     )
