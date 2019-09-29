@@ -1,0 +1,10 @@
+
+.myInput {
+    border-width: 0;
+    border-color: white !important;
+}
+.myLabel {
+    border: 1px solid blue;
+    border-radius: 3px;
+    padding: 3px
+}

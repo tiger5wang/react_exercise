@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
-import MyFormDecorator from './MyFormDecorator'
+// import MyFormDecorator from './MyFormDecorator'
+import Form from './MyFormDecorator2'
+import MyInput from './MyInput'
 
+import { Icon } from 'antd'
 
-@MyFormDecorator
+const Item = Form.Item;
+
+// @MyFormDecorator
+@Form.create()
 class MyForm extends Component {
 
     constructor(props) {
@@ -29,13 +35,16 @@ class MyForm extends Component {
         const {getFieldDecorator} = this.props;
         return (
             <div>
-                {getFieldDecorator('uname', {
-                    rules: [{required: true, message: '请输入用户名'}]
-                })(<input type="text"/>)}
+                <Item>
+                    {getFieldDecorator('uname', {
+                        rules: [{required: true, message: '请输入用户名'}]
+                    })(<MyInput type="text" prefix={<Icon type={'user'} style={{color: 'rgba(0,0,0,.25)'}}/>}/>)}
+                </Item>
+
 
                 {getFieldDecorator('password', {
                     rules: [{required: true, message: '请输入密码'}]
-                })(<input type="password"/>)}
+                })(<MyInput type="password" prefix={<Icon type={'lock'} style={{color: 'rgba(0,0,0,.25)'}}/>}/>)}
 
                 <button onClick={this.onSubmit}>登录</button>
             </div>

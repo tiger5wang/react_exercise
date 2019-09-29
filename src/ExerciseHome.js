@@ -8,6 +8,7 @@ import Compositions from "./modularization/Compositions";
 import HookText from "./modularization/HookText";
 import Context from "./modularization/Context";
 import MyForm from "./modularization/MyForm";
+import Text from "./modularization/Text";
 
 export default class ExerciseHome extends Component {
 
@@ -32,6 +33,8 @@ export default class ExerciseHome extends Component {
                 {/*<Context/>*/}
 
                 <MyForm/>
+
+                {/*<Text/>*/}
             </div>
         )
     }
