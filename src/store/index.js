@@ -1,22 +1,13 @@
 import React, {Component} from 'react';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk'
+import { count } from '../redux/count.redux';
+import { user } from '../redux/user.redux'
 
-const count= (state=0, action) => {
-    switch (action.type) {
-        case 'add':
-            console.log(state + 1)
-            return state + 1;
-        case 'minus':
-            console.log(state - 1)
-            return state - 1;
-        default:
-            return state;
-    }
-};
-
-const store = createStore(count, applyMiddleware(logger, thunk));
+const store = createStore(
+    combineReducers({count, user}),
+    applyMiddleware(logger, thunk));
 
 export default store;
 

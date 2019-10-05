@@ -10,6 +10,7 @@ import Context from "./modularization/Context";
 import MyForm from "./modularization/MyForm";
 import Text from "./modularization/Text";
 import FirstRedux from "./redux/FirstRedux";
+import RouteExample from "./redux/RouteExample";
 
 export default class ExerciseHome extends Component {
 
@@ -38,6 +39,9 @@ export default class ExerciseHome extends Component {
 
                 {/*redux*/}
                 <FirstRedux/>
+
+                {/*route*/}
+                {/*<RouteExample/>*/}
 
                 {/*<Text/>*/}
             </div>
