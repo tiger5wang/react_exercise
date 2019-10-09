@@ -4,10 +4,16 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk'
 import { count } from '../redux/count.redux';
 import { user } from '../redux/user.redux'
+import  createSagaMiddleware from 'redux-saga';
+import mySaga from './sagas'
 
+
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     combineReducers({count, user}),
-    applyMiddleware(logger, thunk));
+    applyMiddleware(logger, sagaMiddleware));
+
+sagaMiddleware.run(mySaga)
 
 export default store;
 
