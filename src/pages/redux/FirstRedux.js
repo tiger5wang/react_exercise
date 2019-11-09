@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import store from '../store/index'
+import store from '../../store/index'
 import { connect } from 'react-redux'
 import { add, minus, asyncAdd } from './count.redux'
 import {Link} from 'react-router-dom'

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk'
-import { count } from '../redux/count.redux';
-import { user } from '../redux/user.redux'
+import { count } from '../pages/redux/count.redux';
+import { user } from '../pages/redux/user.redux'
 import  createSagaMiddleware from 'redux-saga';
 import mySaga from './sagas'
 

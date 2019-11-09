@@ -9,8 +9,9 @@ import HookText from "./modularization/HookText";
 import Context from "./modularization/Context";
 import MyForm from "./modularization/MyForm";
 import Text from "./modularization/Text";
-import FirstRedux from "./redux/FirstRedux";
-import RouteExample from "./redux/RouteExample";
+import FirstRedux from "./pages/redux/FirstRedux";
+import RouteExample from "./pages/redux/RouteExample";
+import Father from "./pages/shouldComponentMount/UpdateOptimize";
 
 export default class ExerciseHome extends Component {
 
@@ -32,18 +33,21 @@ export default class ExerciseHome extends Component {
                 {/*<HookText/>*/}
 
                 {/*组件跨层级通信 context*/}
-                {/*<Context/>*/}
+                <Context/>
 
                 {/*封装 Form 组件*/}
                 {/*<MyForm/>*/}
 
                 {/*redux*/}
-                <FirstRedux/>
+                {/*<FirstRedux/>*/}
 
                 {/*route*/}
                 {/*<RouteExample/>*/}
 
                 {/*<Text/>*/}
+
+                {/*更新优化*/}
+                {/*<Father/>*/}
             </div>
         )
     }

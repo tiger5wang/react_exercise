@@ -29,9 +29,9 @@ export default App;*/
 import React, {Component} from 'react';
 import ExerciseHome from './ExerciseHome'
 import {BrowserRouter, Link, Route, Switch, Redirect} from 'react-router-dom'
-import OrderList from "./redux/OrderList";
-import ProfileCenter from "./redux/ProfileCenter";
-import Login from "./redux/Login";
+import OrderList from "./pages/redux/OrderList";
+import ProfileCenter from "./pages/redux/ProfileCenter";
+import Login from "./pages/redux/Login";
 import { connect } from 'react-redux'
 
 

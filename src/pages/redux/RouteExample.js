@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ExerciseHome from "../ExerciseHome";
+import ExerciseHome from "../../ExerciseHome";
 import ProfileCenter from "./ProfileCenter";
 import Login from "./Login";
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
